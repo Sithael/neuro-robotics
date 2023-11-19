@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'Rotating_base_Joint', 'First_arm_Joint', 'Second_arm_Joint', 'Barrel_part_Joint', 'End_point_Joint', ]

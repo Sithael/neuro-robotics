@@ -1,0 +1,5 @@
+from .goal_dataclass_engram import GoalDataclassEngram
+from .plane_dataclass_engram import PlaneDataclassEngram
+from .robot_dataclass_engram import RobotDataclassEngram
+from .table_dataclass_engram import TableDataclassEngram
+from .tray_dataclass_engram import TrayDataclassEngram

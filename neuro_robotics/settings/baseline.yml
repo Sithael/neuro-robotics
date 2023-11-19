@@ -1,0 +1,50 @@
+baseline: &hook_baseline
+  model: 'DDPG'
+  policy_type: 'MultiInputPolicy'
+  total_timesteps: 1000000
+  env: 'NeuroRobotics-v1'
+  tensorboard_log: 'tensorboard'
+  verbose: 1
+  record: True
+  video_path: 'videos'
+  record_frequency: 100000
+
+wandb:
+  entity: 'sevold'
+  project: 'panda_baseline_interative'
+  config: *hook_baseline
+  monitor_gym: True
+  save_code: True
+  sync_tensorboard: True
+
+inference:
+  device: 'cuda:1'
+  pretrained: False
+
+online: &hook_online
+  use: True
+  csv_file: 'score'
+  n_evals: 100
+  score_threshold: -45
+
+callback:
+  performance:
+    use: False
+    checkpoint: 'models'
+    grad_save_freq: 50000
+    verbose: 2
+  eval:
+    use: True
+    checkpoint: 'best_model'
+    log: 'log'
+    frequency: 50000
+    deterministic: True
+    render: False
+  history:
+    configuration: *hook_online
+
+evaluator:
+  dir: 'eval'
+  checkpoint: 'best_model'
+  n_episodes: 100
+  deterministic: True

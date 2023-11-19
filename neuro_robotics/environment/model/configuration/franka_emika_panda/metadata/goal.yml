@@ -1,0 +1,6 @@
+description_file_location: 'environment/model/franka_emika_panda/description/goal.urdf'
+
+init_position:
+  x: 0.7
+  y: 0.0
+  z: 0.0

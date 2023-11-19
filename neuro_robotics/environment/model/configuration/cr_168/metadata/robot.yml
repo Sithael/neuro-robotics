@@ -1,0 +1,20 @@
+description_file_location: 'environment/model/franka_emika_panda/description/robot.urdf'
+
+init_position:
+  x: 0
+  y: 0
+  z: 0
+
+control_joints:
+  id: [0 ,1, 2, 3, 4, 5, 6, 9, 10]
+  neutral_position: [0.00, 0.40, 0.00, -1.90, 0.00, 2.20, 0.90, 0.00, 0.00]
+
+effector:
+  joint_id: [9,10]
+  link_id: 11
+  soft_displacement_limit: .2
+  lateral_friction: 1.0
+  spinning_friction: .001
+
+inverse_kinematics:
+  displacement_limit: .05

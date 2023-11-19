@@ -1,0 +1,6 @@
+description_file_location: 'environment/model/franka_emika_panda/description/table.urdf'
+
+init_position:
+  x: 0.5
+  y: 0
+  z: -0.65
